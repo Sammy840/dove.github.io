@@ -13,11 +13,18 @@
 <body>
 		<header class="head">
 			<div class="logo">
-				<h1><span class="dove">D</span>OVE</h1>
+				<h1><em class="dove">D</em>OVE</h1>
 			</div>
+			
 			<div class="navigation" >
-					<nav class="nav-content"> 
+
+				<span id="toggle"><i class="fa fa-bars" id="bar"></i></span> <!-- .lnmk -->
+
+					<nav class="nav-content">
+					<aside class="name sjdk sudjbsd" id='sidebar'> <!-- .lnmk -->
 						<ul id="drop">
+
+							<li class="void_fix"></li> <!-- .lnmk -->
 							<li class="current" id="nav"><a href="index.html" class="active">Home</a></li>
 							<li id="nav"><a href="#">About</a></li>
 							<li id="nav"><a href="#">Contact</a></li>
@@ -31,19 +38,22 @@
 							<li id="link"><a href="www.instagram.com" target="blank" ><i class="fa fa-instagram"></i></a></li>
 							<li id="link"><a href="www.pinterest.com" target="blank" ><i class="fa fa-pinterest"></i></a></li>
 							<li><button id="get"><a href="#">Get Started</a></button></li>
+							<li class="void_fix"></li> <!-- .lnmk -->
 						</ul>
-					</nav>			
-			</div>
-		</header>
 
+					</aside> <!-- .lnmk -->
+					</nav>
+			</div>
+ 
+		</header>
  
 		<sectiion class="cont" id="hero" >
 			<img src="img/hero-bg.jpg" alt="" class="hero">
 			<div class="img-text">
 				<p>BEST OPTIONS FOR YOU</p>
 				<h1>DRIVE SAFE & GET LICENCE</h1>
-				<button class="yellow"><a href="#">CONTACT US</a></button>
-				<button class="blue"><a href="#">SEE COURSES</a></button>
+				<button class="yellow" id="both"><a href="#">CONTACT US</a></button>
+				<button class="blue" id="both"><a href="#">SEE COURSES</a></button>
 			</div>
 		</section>
 
@@ -184,6 +194,52 @@
 		</section>
 		<hr>
 		<p class="last">Copyright &copy; 2020 All Rights Reserved | Designed By Oluwaseun</p>	
-	</footer>	
+	</footer>
+
+
+	<script type="text/javascript">
+	// <!-- VARIABES -->
+
+	let toggle = document.getElementById('toggle')	
+	let sidebar = document.getElementById('sidebar')
+	let main = document.querySelector('main')
+
+	toggle.onclick = openSidebar	
+	// toggle.addEventListener('click', openSidebar )
+	function openSidebar(){
+		// if( sidebar.classList.contains('show')){
+		// 	sidebar.classList.remove('show')
+		// }else{
+		// 	sidebar.classList.add('show')
+		// }
+		// SHORTEN
+		sidebar.classList.toggle('show')
+		main.classList.toggle('skew')
+	}
+
+	// MODAL
+	let modal = document.querySelector('.modal')
+	let closeBtn = document.querySelector('#close')
+	let overlay = document.querySelector('.overlay')
+	let openBtn = document.querySelector('#openModal')
+
+	// Add event listener
+	openBtn.onclick = showModal
+	// declare the function
+	function showModal(){
+		overlay.classList.remove('hidden')
+		modal.classList.remove('hidden')
+	}
+	// simulate a sent message
+	// setTimeout( showModal, 5000)
+
+	closeBtn.addEventListener('click', hideModal)
+	overlay.onclick = hideModal
+	function hideModal(){
+		overlay.classList.add('hidden')
+		modal.classList.add('hidden')
+	}
+</script>
+
 </body>
 </html>
